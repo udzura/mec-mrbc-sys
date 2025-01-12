@@ -2,6 +2,14 @@
 name = "mec-mrbc-sys"
 version = "3.3.0"
 edition = "2021"
+authors = ["Uchio Kondo <udzura@udzura.jp>", "mruby developers"]
+description = "mrbc distribution for mec internal use"
+license-file = "LICENSE"
+include = [
+    "**/*.rs",
+    "Cargo.toml",
+    "vendor/*",
+]
 
 [dependencies]
 
