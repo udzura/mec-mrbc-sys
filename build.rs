@@ -7,8 +7,7 @@ fn main() {
     let out_dir = std::env::var("OUT_DIR").unwrap();
 
     println!("cargo:rerun-if-changed=build.rs");
-    println!("cargo:rerun-if-changed=./lib/libmruby_mrbc.a");
-    println!("cargo:rustc-link-search=./lib");
+    println!("cargo:rustc-link-search={}", out_dir);
     cc::Build::new()
         .files(
             glob("./vendor/mruby/mrbc-src/*.c")
