@@ -21,14 +21,6 @@ fn main() {
         .flag("-c")
         .compile("mruby_mrbc");
 
-    Command::new("cp")
-        .args(&[
-            &format!("{}/libmruby_mrbc.a", out_dir),
-            "./lib/libmruby_mrbc.a",
-        ])
-        .output()
-        .expect("failed to copy libmruby_mrbc.a");
-
     println!("cargo:rustc-link-lib=mruby_mrbc");
     let bindings = bindgen::Builder::default()
         .header("vendor/mruby/include/wrapper.h")
