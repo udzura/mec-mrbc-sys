@@ -1,6 +1,4 @@
 extern crate cc;
-use std::process::Command;
-
 use glob::glob;
 
 fn main() {
