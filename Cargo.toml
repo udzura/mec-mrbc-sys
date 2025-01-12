@@ -9,6 +9,7 @@ include = [
     "**/*.rs",
     "Cargo.toml",
     "vendor/*",
+    "lib/.keep",
 ]
 
 [dependencies]

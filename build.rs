@@ -7,8 +7,8 @@ fn main() {
     let out_dir = std::env::var("OUT_DIR").unwrap();
 
     println!("cargo:rerun-if-changed=build.rs");
-    println!("cargo:rerun-if-changed=./vendor/mruby/lib/libmruby_mrbc.a");
-    println!("cargo:rustc-link-search=./vendor/mruby/lib");
+    println!("cargo:rerun-if-changed=./lib/libmruby_mrbc.a");
+    println!("cargo:rustc-link-search=./lib");
     cc::Build::new()
         .files(
             glob("./vendor/mruby/mrbc-src/*.c")
@@ -25,7 +25,7 @@ fn main() {
     Command::new("cp")
         .args(&[
             &format!("{}/libmruby_mrbc.a", out_dir),
-            "./vendor/mruby/lib/libmruby_mrbc.a",
+            "./lib/libmruby_mrbc.a",
         ])
         .output()
         .expect("failed to copy libmruby_mrbc.a");
